@@ -1,8 +1,8 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="sticky bg-transparent">
+    <div className=" bg-transparent">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -23,9 +23,9 @@ const Navbar = () => {
               </svg>
             </div>
           </div>
-          <a className="btn btn-ghost text-2xl font-extrabold work-sans">
+          <Link className="btn btn-ghost text-2xl font-extrabold work-sans">
             Book Vibe
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1 flex gap-10 text-lg items-center work-sans">
