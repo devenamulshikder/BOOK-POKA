@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className=" bg-transparent">
+    <div className=" sticky z-50 top-0  bg-base-200">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -40,7 +40,7 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to="/listed-books"
+              to="/readList"
               className={({ isActive }) =>
                 isActive
                   ? "btn btn-outline btn-success font-bold text-lg"

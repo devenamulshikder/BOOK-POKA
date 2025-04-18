@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router";
+import { addToStoredLS } from "../../utilities/addToDB";
+import { addToStoredWishListLS } from "../../utilities/addToWishListDB";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -8,6 +10,7 @@ const BookDetails = () => {
   const {
     bookName,
     author,
+    bookId,
     image,
     totalPages,
     tags,
@@ -17,6 +20,14 @@ const BookDetails = () => {
     review,
     yearOfPublishing,
   } = singleBook;
+
+  const handleReadList = (id) => {
+    addToStoredLS(id);
+  };
+
+  const handeWishList = (id) => {
+    addToStoredWishListLS(id);
+  };
   return (
     <div className="max-w-7xl mx-auto">
       <div className="flex lg:flex-row flex-col lg:gap-20 mt-4 lg:mt-16 p-4 lg:p-0">
@@ -58,8 +69,15 @@ const BookDetails = () => {
             </div>
           </div>
           <div className="flex gap-6 work-sans text-lg">
-            <button className="btn">Read</button>
-            <button className="btn bg-[#59C6D2] text-white">Wishlist</button>
+            <button onClick={() => handleReadList(bookId)} className="btn">
+              Mark as Read
+            </button>
+            <button
+              onClick={() => handeWishList(bookId)}
+              className="btn bg-[#59C6D2] text-white"
+            >
+              Wishlist
+            </button>
           </div>
         </div>
       </div>
