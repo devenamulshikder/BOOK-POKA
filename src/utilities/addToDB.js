@@ -1,10 +1,4 @@
 import toast from "react-hot-toast";
-
-
-
-
-
-
 const getStoredBook = () => {
   const storedBookSTR = localStorage.getItem("readList");
   if (storedBookSTR) {
@@ -26,6 +20,4 @@ const addToStoredLS = (id) => {
     toast.success("Yo-hoo you Read this book!")
   }
 };
-
-
-export{addToStoredLS}
+export{addToStoredLS,getStoredBook}
