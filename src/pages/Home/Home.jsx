@@ -1,9 +1,15 @@
+import { useLoaderData } from "react-router";
+import Banner from "../../components/banner/Banner";
+import Books from "../../components/books/Books";
 
 
 const Home = () => {
+    const booksData = useLoaderData()
+    
     return (
         <div className="max-w-7xl mx-auto">
-            <h1>Home</h1>
+            <Banner/>
+            <Books booksData={booksData}/>
         </div>
     );
 };

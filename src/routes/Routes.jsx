@@ -12,6 +12,7 @@ import Home from "../pages/Home/Home";
         children:[
             {
                 index: true,
+                loader: ()=>fetch('booksData.json'),
                 element:<Home/>
             }
         ]
